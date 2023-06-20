@@ -1,6 +1,8 @@
 import React from 'react';
+import Card from '../../components/Card';
 
-function MainPage() {
+function MainPage(): JSX.Element {
+
   return (
     <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
@@ -61,7 +63,8 @@ function MainPage() {
               </ul>
             </form>
             <div className="cities__places-list places__list tabs__content">
-              <article className="cities__place-card place-card">
+              <Card />
+              {/* <article className="cities__place-card place-card">
                 <div className="place-card__mark">
                   <span>Premium</span>
                 </div>
@@ -225,7 +228,7 @@ function MainPage() {
                   </h2>
                   <p className="place-card__type">Private room</p>
                 </div>
-              </article>
+              </article> */}
             </div>
           </section>
           <div className="cities__right-section">

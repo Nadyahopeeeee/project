@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../../components/Footer';
 
-export default function FavoritesPage() {
+export default function FavoritesPage(): JSX.Element {
   return (
     <>
       <main className="page__main page__main--favorites">

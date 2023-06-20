@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function RoomPage() {
+export default function RoomPage(): JSX.Element {
   return (
     <main className="page__main page__main--property">
       <section className="property">
