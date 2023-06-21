@@ -1,6 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function RoomPage(): JSX.Element {
+  const params = useParams();
+
+  if(params.id) {
+    console.log(params);
+  }
+
   return (
     <main className="page__main page__main--property">
       <section className="property">

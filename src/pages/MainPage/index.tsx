@@ -1,7 +1,15 @@
 import React from 'react';
 import Card from '../../components/Card';
+import { Offers } from '../../types/offer';
 
-function MainPage(): JSX.Element {
+type MainPageProps = {
+  offers: Offers[];
+}
+
+function MainPage(props: MainPageProps): JSX.Element {
+  const {offers} = props;
+
+  console.log(offers);
 
   return (
     <main className="page__main page__main--index">
