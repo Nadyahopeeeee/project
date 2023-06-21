@@ -15,11 +15,13 @@ type AppProps = {
 }
 
 function App({offers}: AppProps): JSX.Element {
+  const [firstOffer] = offers;
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path={AppRoute.Default} element={<Layout />}>
-          <Route index element={<MainPage offers={offers} />} />
+          <Route index element={<MainPage offer={firstOffer as Offers} />} />
           <Route path={AppRoute.Room}>
             <Route index element={<RoomPage />} />
             <Route path=':id' element={<RoomPage />} />

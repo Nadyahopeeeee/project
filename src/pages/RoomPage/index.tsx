@@ -1,12 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 export default function RoomPage(): JSX.Element {
-  const params = useParams();
+  // const params = useParams();
 
-  if(params.id) {
-    console.log(params);
-  }
+  // if(params.id) {
+  //   console.log(params);
+  // }
 
   return (
     <main className="page__main page__main--property">

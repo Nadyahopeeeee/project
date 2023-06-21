@@ -1,9 +1,9 @@
 export type Rooms = {
-  id: string;
+  id: number;
   name: string;
   type: string;
   mark: string;
-  price: string;
+  price: number;
 };
 
 export type Offers = {
