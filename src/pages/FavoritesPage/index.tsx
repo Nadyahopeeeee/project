@@ -1,7 +1,16 @@
 import React from 'react';
 import Footer from '../../components/Footer';
+import { Offer } from '../../types/offer';
 
-export default function FavoritesPage(): JSX.Element {
+type FavoritesPageProps = {
+  offersItems: Offer[];
+  // rooms: Room[];
+}
+
+export default function FavoritesPage(props: FavoritesPageProps): JSX.Element {
+  // const {offersItems} = props;
+  // const {listName, rooms} = offersItems;
+
   return (
     <>
       <main className="page__main page__main--favorites">

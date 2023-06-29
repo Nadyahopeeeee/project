@@ -3,6 +3,8 @@ export enum AppRoute {
   SignIn = '/login',
   Favorites = '/favorites',
   Room = '/offer',
+  Main  = '/6-cities-react',
+  Error  = '*',
 }
 
 export enum AuthorizationStatus {

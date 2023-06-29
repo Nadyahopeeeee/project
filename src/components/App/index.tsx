@@ -7,44 +7,33 @@ import Layout from '../Layout';
 import MainPage from '../../pages/MainPage';
 import RoomPage from '../../pages/RoomPage';
 import LoginPage from '../../pages/LoginPage';
+import NotFoundPage from "../../pages/NotFoundPage";
 import FavoritesPage from '../../pages/FavoritesPage';
-import { Offers } from '../../types/offer';
+import { Offer } from '../../types/offer';
+
 
 type AppProps = {
-  offers: Offers[];
+  offers: Offer[];
 }
 
 function App({offers}: AppProps): JSX.Element {
-  const [firstOffer] = offers;
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Default} element={<Layout />}>
-          <Route index element={<MainPage offer={firstOffer as Offers} />} />
+          <Route index path={AppRoute.Main} element={<MainPage offersItems={offers as Offer[]} />} />
           <Route path={AppRoute.Room}>
             <Route index element={<RoomPage />} />
             <Route path=':id' element={<RoomPage />} />
           </Route>
           <Route path={AppRoute.SignIn} element={<LoginPage />} />
           <Route path={AppRoute.Favorites} element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <FavoritesPage />
-            </PrivateRoute>
+            // <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+              <FavoritesPage offersItems={offers as Offer[]} />
+            // </PrivateRoute>
           }
           />
-          <Route path='*' element={
-            <>
-              <h1>
-                404.
-                <br />
-                <small>Page not found</small>
-              </h1>
-              <Link to="/">Go to main page</Link>
-            </>
-          }
-          />
-        </Route>
+          <Route path={AppRoute.Error} element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
